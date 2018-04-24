@@ -7,6 +7,8 @@ set -e # fail fast
 BUILD_DIR=$1
 CACHE_DIR=$2
 
+BUILDPACK_NAME=cairo
+
 function indent() {
   c='s/^/       /'
   case $(uname) in
@@ -19,7 +21,7 @@ function vendor() {
   binary="$1"
   path="$2"
 
-  echo "Fetching $binary -> $path" | indent
+  echo "Fetching $binary" | indent
   mkdir -p $path
   curl $binary -s -o - | tar xz -C $path -f -
 
