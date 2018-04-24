@@ -43,8 +43,8 @@ function vendor() {
 }
 
 echo "-----> Vendoring binaries"
-vendor "https://s3.amazonaws.com/dbniceguy/heroku/cairo-1.14.6.tar.gz"  "$BUILD_DIR/vendor/cairo"
-vendor "https://s3.amazonaws.com/dbniceguy/heroku/freetype-2.4.0.tar.gz" "$BUILD_DIR/vendor/freetype"
+# vendor "https://s3.amazonaws.com/dbniceguy/heroku/cairo-1.14.6.tar.gz"  "$BUILD_DIR/vendor/cairo"
+vendor "https://s3.amazonaws.com/dbniceguy/heroku/freetype.tar.gz" "$BUILD_DIR/vendor/freetype"
 
 export CPPPATH="$BUILD_DIR/vendor/cairo/include/cairo:$BUILD_DIR/vendor/freetype/include/freetype2:$CPPPATH"
 export CPATH="$BUILD_DIR/vendor/cairo/include/cairo:$BUILD_DIR/vendor/freetype/include/freetype2:$CPATH"
