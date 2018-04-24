@@ -29,6 +29,10 @@ function vendor() {
     export PATH=$path/bin:$PATH
   fi
 
+  if [ -d "$path/lib" ]; then
+    export PATH=$path/lib:$PATH
+  fi
+
   if [ -d "$path/lib/pkgconfig" ]; then
     # pkg-config should handle compiler options (if used)
     export PKG_CONFIG_PATH="$path/lib/pkgconfig:$PKG_CONFIG_PATH"
